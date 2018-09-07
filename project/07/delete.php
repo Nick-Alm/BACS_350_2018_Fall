@@ -8,7 +8,7 @@
 
 
     // Modify database row
-    $query = "DELETE from subscribers WHERE id = 1";
+    $query = "DELETE from subscribers WHERE name = 'Test User'";
 
     $statement = $db->prepare($query);
     $statement->execute();
