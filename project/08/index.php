@@ -12,7 +12,7 @@
 
     require 'select.php';
 
-    echo '<a href="insert.php">Add Record</a>';
+    echo '<a href="add.php">Add Record</a>';
     // Include the page end
     include 'footer.php';
 

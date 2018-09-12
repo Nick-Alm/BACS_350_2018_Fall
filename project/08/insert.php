@@ -1,15 +1,13 @@
 <?php
 
+    $name = filter_input(INPUT_POST, 'my_name');
+    $email = filter_input(INPUT_POST, 'my_email');
+
     // Connect to the database
     require_once 'db.php';
 
 
-    echo '<h2>Add Test User</h2>';
-
-
-    // Add new record
-    $name = 'Test User';
-    $email = 'tester@gmail.com';
+    echo '<h2>Add Subscriber</h2>';
 
 
     // Add database row
