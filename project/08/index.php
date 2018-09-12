@@ -3,6 +3,7 @@
     // Setup a page title variable
     $page_title = "PAGE TITLE";
 
+
     // Include the page start
     include 'header.php';
 
