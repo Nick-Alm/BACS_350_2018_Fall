@@ -25,4 +25,6 @@
     // Display subscriber records
     require 'select.php';
 
+    echo '<a href="./index.php">Back to Project Page</a>'
+
 ?>
