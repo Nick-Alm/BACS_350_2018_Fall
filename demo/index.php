@@ -1,22 +1,22 @@
-<?php
+ <?php
 
-    // Setup a page title variable
-    $page_title = "PAGE TITLE";
+    // Start the page
+    $page_title = 'Subscriber Demo';
+    require_once 'header.php';
 
-    // Include the page start
-    include 'header.php';
-
-    // Include the main page content
-    echo '<h1>BACS 350 - Project #8</h1><p>BODY</p>';
-
-    // Show the subscribers
+    // Show the list after the insert
     require 'select.php';
 
-    echo '<a href="insert.php">Add Record</a>';
+    // Add a record
+    echo '<form action="insert.php" method="get">
+        
+        <p><label>Name:</label> &nbsp; <input type="text" name="name"></p>
+        <p><label>Email:</label> &nbsp; <input type="text" name="email"></p>
+        <p><input type="submit" value="Add New Contact"/></p>
+        
+    </form>';
 
-    require_once '../templates/test.php';
+    // End the page
+    require_once 'footer.php';
 
-    // Include the page end
-    include 'footer.php';
-
- ?>
+?>
