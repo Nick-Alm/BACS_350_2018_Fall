@@ -7,6 +7,8 @@
     $page_title = 'MVC Project - Nick Alm';
     begin_page($site_title, $page_title);
 
+    require 'db.php';
+
 
     // Your page content goes here
 

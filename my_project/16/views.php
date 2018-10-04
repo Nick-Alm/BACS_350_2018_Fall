@@ -35,7 +35,7 @@
 
     function end_page() {
 
-        echo '
+        echo '          <p><a href=../index.htm>Back to Index</a><p>
                     </main>
                 </body>
             </html>
