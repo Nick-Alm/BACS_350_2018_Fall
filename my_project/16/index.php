@@ -2,8 +2,8 @@
     // Start the page
     require_once 'views.php';
  
-    $site_title = 'BACS 350 - Demo Server';
-    $page_title = 'MVC Pattern';
+    $site_title = 'Nick Alm - Project 10';
+    $page_title = 'MVC Pattern Project';
     begin_page($site_title, $page_title);
     // Page Content
     echo '<p><a href="pattern.php">MVC Pattern</a></p>';

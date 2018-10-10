@@ -5,10 +5,10 @@
     // Connect to the remote database
     function remote_connect() {
         $port = '3306';
-        $dbname = 'subscribers';
+        $dbname = 'qydwprmy_subscribers';
         $db_connect = "mysql:host=localhost:$port;dbname=$dbname";
-        $username = 'nick';
-        $password = 'pass';
+        $username = 'qydwprmy_nickalm';
+        $password = 'password';
         return db_connect($db_connect, $username, $password);
     }
     // Local Host Database settings
@@ -37,7 +37,7 @@
     // Open the database or die
     function subscribers_connect() {
         
-        $remote = ($_SERVER['SERVER_NAME'] == 'subscribers');
+        $remote = ($_SERVER['SERVER_NAME'] == 'qyd.wpr.mybluehost.me');
         if ($remote) {
             return remote_connect();
         } 
