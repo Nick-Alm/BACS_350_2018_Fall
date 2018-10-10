@@ -2,7 +2,7 @@
     // Start the page
     require_once 'views.php';
  
-    $site_title = 'Nick Alm - Project 10';
+    $site_title = 'Nick Alm - Project 16';
     $page_title = 'MVC Pattern Project';
     begin_page($site_title, $page_title);
     // Page Content
