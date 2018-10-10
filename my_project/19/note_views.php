@@ -43,8 +43,10 @@
                 <ul>
             ';
         foreach ($list as $s) {
+            $display_date = date_create($s['date']);
+            $display_string = $display_date->format('D, M d, Y');
             echo '<li>' . '<b><label>Note Title: </label></b>' . $s['title'] .  '<br>' . 
-                        '<b><label>Date Created: </label></b>' . $s['date'] .  '<br>' .
+                        '<b><label>Date Created: </label></b>' . $display_string .  '<br>' .
                         '<b><label>Body:         </label></b>'. '<br>'.
                         '<p>' .$s['body'] .'</p>' . '</li>';
         }
