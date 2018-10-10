@@ -1,7 +1,7 @@
 <?php
 
     /*
-        add_subscriber_form -- Create an HTML form to add record.
+        add_note_form -- Create an HTML form to add record.
     */
 
     function add_note_form() {
@@ -32,7 +32,7 @@
 
 
     /*
-        render_list -- Loop over all of the subscribers to make a bullet list
+        render_list -- Loop over all of the notes to make a bullet list
     */
  
     function render_list($list) {
@@ -43,7 +43,10 @@
                 <ul>
             ';
         foreach ($list as $s) {
-            echo '<li>' . $s['date'] . ', ' . $s['title'] . ',' . $s['body'] . '</li>';
+            echo '<li>' . '<b><label>Note Title: </label></b>' . $s['title'] .  '<br>' . 
+                        '<b><label>Date Created: </label></b>' . $s['date'] .  '<br>' .
+                        '<b><label>Body:         </label></b>'. '<br>'.
+                        '<p>' .$s['body'] .'</p>' . '</li>';
         }
         echo '
                 </ul>

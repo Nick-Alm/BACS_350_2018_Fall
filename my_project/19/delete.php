@@ -6,7 +6,7 @@
 
 
     // Delete all records
-    if (clear_note ($db, 'index.php')) {
+    if (clear_notes($db, 'index.php')) {
         header("Location: index.php");
     }
 

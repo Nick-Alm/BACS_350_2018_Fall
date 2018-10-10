@@ -7,7 +7,8 @@
 
     // Pick out the inputs
     $title = filter_input(INPUT_GET, 'title');
-    $date = date('YYYY-mm-dd');
+    $date_now = date("Y-m-d");
+    $date = $date_now;
     $body = filter_input(INPUT_GET, 'body');
 
 
