@@ -1,8 +1,8 @@
 <?php
 
     // Connect to the database
-    require_once 'db.php';
-    //$db = subscribers_connect();
+    require_once 'subscriber_db.php';
+    $db = subscribers_connect();
 
 
     // Delete all records
