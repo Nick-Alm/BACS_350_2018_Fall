@@ -1,12 +1,12 @@
 <?php
 
     // Connect to the database
-    require_once 'subscriber_db.php';
-    $db = subscribers_connect();
+    require_once 'note_db.php';
+    $db = notes_connect();
 
 
     // Delete all records
-    if (clear_subscribers ($db, 'index.php')) {
+    if (clear_note ($db, 'index.php')) {
         header("Location: index.php");
     }
 

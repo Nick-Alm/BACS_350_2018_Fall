@@ -4,16 +4,16 @@
         add_subscriber_form -- Create an HTML form to add record.
     */
 
-    function add_subscriber_form() {
+    function add_note_form() {
         
         echo '
             <div class="card">
-                <h3>Add Subscriber</h3>
+                <h3>Add Note</h3>
             
                 <form action="insert.php" method="get">
-                    <p><label>Name:</label> &nbsp; <input type="text" name="name"></p>
-                    <p><label>Email:</label> &nbsp; <input type="text" name="email"></p>
-                    <p><input type="submit" value="Sign Up"/></p>
+                    <p><label>Title:</label> &nbsp; <input type="text" name="title"></p>
+                    <p><label>Body:</label> &nbsp; <textarea name="body"></textarea></p>
+                    <p><input type="submit" value="Save Note"/></p>
                 </form>
             </div>
             ';
@@ -39,11 +39,11 @@
 
         echo '
             <div class="card">
-                <h3>Subscribers in List</h3> 
+                <h3>Notes</h3> 
                 <ul>
             ';
         foreach ($list as $s) {
-            echo '<li>' . $s['id'] . ', ' . $s['name'] . ', ' . $s['email'] . '</li>';
+            echo '<li>' . $s['date'] . ', ' . $s['title'] . ',' . $s['body'] . '</li>';
         }
         echo '
                 </ul>

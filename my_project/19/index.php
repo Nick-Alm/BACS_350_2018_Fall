@@ -3,8 +3,8 @@
     // Start the page
     require_once 'views.php';
  
-    $site_title = 'BACS 350 - Demo Server';
-    $page_title = 'MVC Pattern';
+    $site_title = 'BACS 350 - Notes App';
+    $page_title = 'Project 19';
     begin_page($site_title, $page_title);
 
 
@@ -14,24 +14,24 @@
     
 
     // Use subscriber code
-    require_once 'subscriber_views.php';
-    require_once 'subscriber_db.php';
+    require_once 'note_views.php';
+    require_once 'note_db.php';
 
 
     // Connect the appropriate database
-    $db =  subscribers_connect();
+    $db =  notes_connect();
 
 
     // View for listing subscribers
-    render_list(query_subscribers($db));
+    render_list(query_notes($db));
 
 
     // Form view to add subscriber
-    add_subscriber_form();
+    add_note_form();
 
 
     // Button to clear
-    echo '<a href="delete.php">Reset Subscribers</a>';
+    echo '<a href="delete.php">Reset Note</a>';
 
         
     // End the page

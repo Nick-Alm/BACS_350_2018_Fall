@@ -8,10 +8,10 @@
     function remote_connect() {
 
         $port = '3306';
-        $dbname = 'uncobacs_subscribers';
+        $dbname = 'qydwprmy_notes';
         $db_connect = "mysql:host=localhost:$port;dbname=$dbname";
-        $username = 'uncobacs_350';
-        $password = 'BACS_350';
+        $username = 'qydwprmy_nickalm';
+        $password = 'password';
         return db_connect($db_connect, $username, $password);
 
     }
@@ -21,7 +21,7 @@
     function local_connect() {
 
         $host = 'localhost';
-        $dbname = 'subscribers';
+        $dbname = 'notes';
         $username = 'root';
         $password = '';
         $db_connect = "mysql:host=$host;dbname=$dbname";
@@ -48,9 +48,9 @@
 
 
     // Open the database or die
-    function subscribers_connect() {
+    function notes_connect() {
         
-        $remote = ($_SERVER['SERVER_NAME'] == 'unco-bacs.org');
+        $remote = ($_SERVER['SERVER_NAME'] == 'qyd.wpr.mybluehost.me');
         if ($remote) {
             return remote_connect();
         } 
@@ -67,16 +67,17 @@
 
 
     // Add a new record
-    function add_subscriber($db, $name, $email, $success) {
+    function add_note($db, $title, $date, $body, $success) {
 
         // Show if insert is successful or not
         try {
 
             // Add database row
-            $query = "INSERT INTO subscribers (name, email) VALUES (:name, :email);";
+            $query = "INSERT INTO notes (title, date, body) VALUES (:title, :date, :body);";
             $statement = $db->prepare($query);
-            $statement->bindValue(':name', $name);
-            $statement->bindValue(':email', $email);
+            $statement->bindValue(':title', $title);
+            $statement->bindValue(':date', $date);
+            $statement->bindValue(':body', $body);
             $statement->execute();
             $statement->closeCursor();
 
@@ -93,10 +94,10 @@
 
 
     // Delete all database rows
-    function clear_subscribers($db, $success) {
+    function clear_notes($db, $success) {
         
         try {
-            $query = "DELETE FROM subscribers";
+            $query = "DELETE FROM notes";
             $statement = $db->prepare($query);
             $row_count = $statement->execute();
 //            echo '<p><b>Delete successful</b></p>';
@@ -110,10 +111,10 @@
     }
 
 
-    // Query for all subscribers
-    function query_subscribers ($db) {
+    // Query for all notes
+    function query_notes ($db) {
 
-        $query = "SELECT * FROM subscribers";
+        $query = "SELECT * FROM notes";
         $statement = $db->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
