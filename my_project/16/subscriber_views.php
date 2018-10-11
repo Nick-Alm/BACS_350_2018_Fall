@@ -35,7 +35,9 @@
                 <ul>
             ';
         foreach ($list as $s) {
-            echo '<li>' . $s['id'] . ', ' . $s['name'] . ', ' . $s['email'] . '</li>';
+            $id = $s['id'];
+            echo '<li>' . $s['id'] . ', ' . $s['name'] . ', ' . $s['email'] . '</li><br>'.
+            "<a href=delete_one.php?id=$id>Delete Subscriber</a>";
         }
         echo '
                 </ul>

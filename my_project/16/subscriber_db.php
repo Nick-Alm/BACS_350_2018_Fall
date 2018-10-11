@@ -85,6 +85,22 @@
         }
         
     }
+
+    function delete_subscriber($id, $db, $success) {
+        
+        try {
+            $query = "DELETE FROM subscribers WHERE ID =". $id;
+            $statement = $db->prepare($query);
+            $row_count = $statement->execute();
+//            echo '<p><b>Delete successful</b></p>';
+            return true;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Error: $error_message</p>";
+            die();
+        }
+        
+    }
     // Query for all subscribers
     function query_subscribers ($db) {
         $query = "SELECT * FROM subscribers";
