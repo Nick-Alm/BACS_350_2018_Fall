@@ -1,20 +1,46 @@
- <?php
-    
-    function render_page($title, $text) {
-        
-        echo "<h1>$title</h1><p>$text</p>";
+<?php
+
+    /*
+        begin_page -- Create the HTML for the beginning of a page.  Add a page title and headline.
+    */
+
+    function begin_page($site_title, $page_title) {
+
+        echo '
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+
+                    <meta charset="UTF-8">
+                    <title>' . $page_title . '</title>
+
+                    <link rel="stylesheet" href="style.css">
+
+                </head>
+                <body>
+
+                    <header>
+                        <img src="Bear.png" alt="Bear Logo"/>
+                        <h1>' . $site_title . '</h1>
+                        <h2>' . $page_title . '</h2>
+                    </header>
+                    <main>
+        ';
     }
 
-    // Loop over all of the subscribers to make a bullet list
-    function render_list($list) {
 
-        echo '<h2>Subscribers in List</h2>';
-        echo '<ul>';
-        foreach ($list as $s) {
-            echo '<li>' . $s['id'] . ', ' . $s['name'] . ', ' . $s['email'] . '</li>';
-        }
-        echo '</ul>';
-    
+    /*
+        end_page -- Create the HTML for the end of a page.
+    */
+
+    function end_page() {
+
+        echo '
+                    </main>
+                </body>
+            </html>
+        ';
+
     }
-    
+
 ?>
