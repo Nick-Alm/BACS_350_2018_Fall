@@ -11,7 +11,7 @@
     '<div class="card">
         <h1>Version Control Proficiency Demonstration</h1>
         <div class="note">
-            <h3>A one note for clarification:</h3><br>
+            <h3>A note for clarification:</h3><br>
             For my local development environment, I have not placed my files directly into c:/xampp/htdocs.<br>
             I have done this because of disk size limitations on my C: drive.<br>
             I instead have my repo stored on a different drive and have XAMPP use this directory for the root directory for my site.<br>
