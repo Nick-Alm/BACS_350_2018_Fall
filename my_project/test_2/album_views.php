@@ -53,14 +53,14 @@
             $purchase_url = $s['purchase_url'];
             $description = $s['description'];
             $review = $s['review'];
-            echo '<div class="card">';
+            echo '<li class="card">';
             echo  '<b><label>Album Title: </label></b>' . $name .  '<br>' . 
                         '<b><label>Artist: </label></b>' . $artist .  '<br>' .
-                        '<b><label>Artwork: </label></b><br><img src=' . $artwork . ' class="album_img"><br>' .
-                        '<b><label>Purchase Link: </label></b><a href="' . $purchase_url .  '">Purchase Site<a/><br>' .
+                        '<b><label>Artwork: </label></b><br><img src=' . $artwork . ' class="album_img" alt="album img"><br>' .
+                        '<b><label>Purchase Link: </label></b><a href="' . $purchase_url .  '">Purchase Site</a><br>' .
                         '<b><label>Description: </label></b>' . $description .  '<br>' .
                         '<b><label>Review: </label></b>' . $review .  '<br>';
-            echo '</div>';
+            echo '</li>';
         }
         echo '
                 </ul>
