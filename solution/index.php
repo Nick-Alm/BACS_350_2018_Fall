@@ -1,14 +1,17 @@
 <?php 
 
-    // Start the page
-    require_once '../views.php';
+    require_once '../templates/views.php';
+    require_once '../templates/log.php';
+ 
 
-    $site_title = 'BACS 350 - Demo Server';
-    $page_title = 'BACS 350 - Solutions';
-    begin_page($site_title, $page_title);
+    // Log the page load
+    $log->log_page();
+    $content = render_button('Templates', '../templates/index.php');
+    $content .= render_button('Solutions', 'index.php');
+    $content .= render_button('Show Log', '../templates/pagelog.php');
 
 
-    echo '
+    $content .= '
         <h1>BACS 350 - Solutions</h1>
 
         <p>All of the solutions to the projects in BACS 350 teach important skills.</p>
@@ -92,10 +95,40 @@
             <li>
                 <a href="24">24. Page Templates </a> - Building a page from template
             </li>
+            <li>
+                <a href="25">25. View Templates </a> - Building a page from multiple views
+            </li>
+             <li>
+                <a href="26">26. Error Handling </a> - Deal with errors and exceptions
+            </li>
+             <li>
+                <a href="27">27. Cookies and Sessions </a> - Use the browser to store values
+            </li>
+            <li>
+                <a href="28">28. CRUD App </a> - All four crud operations in one page
+            </li>
+            <li>
+                <a href="29">29. Data App </a> - Object encapsulation of operations
+            </li>
+            <li>
+                <a href="30">30. User Authentication </a> - Login and user registration
+            </li>
+            <li>
+                <a href="31">31. Encapsulation </a> - Issue tracking system
+            </li>
         </ul>
     ';
 
 
-    end_page(); 
+   // Display the entire page
+    $settings = array(
+        "site_title" => "BACS 350 Solutions",
+        "page_title" => "Example to illustrate skills", 
+        "logo"       => '../templates/Bear.png',
+        "style"      => '../templates/style.css',
+        "content"    => $content);
+
+    echo render_template('../templates/page.html', $settings);
+
 
 ?>

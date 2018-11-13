@@ -7,7 +7,7 @@
     
     Usage:
         require_once 'db.php';
-        $db = subscribers_connect();
+        $db = connect_database();
         
 */
 
@@ -57,7 +57,7 @@
 
 
     // Open the database or die
-    function subscribers_connect() {
+    function connect_database() {
         
         $local = ($_SERVER['SERVER_NAME'] == 'localhost');
         if ($local) {
@@ -68,5 +68,9 @@
         }
         
     }
+
+    // Create a connection
+
+    $db = connect_database();
 
 ?>
