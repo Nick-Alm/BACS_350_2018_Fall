@@ -1,63 +1,52 @@
 <?php
-
-/*
-    General database connection.  This design works for either local or remote
-    database connections.  It automatically determines which is needed at 
-    execution time.
-    
-    Usage:
-        require_once 'db.php';
-        $db = subscribers_connect();
-        
-*/
-
-
+/* --------------------------------------      
+SQL for Table
+-- Create table subscribers: id, name, email --
+CREATE TABLE albums (
+  id int(3) NOT NULL AUTO_INCREMENT,
+  album varchar(255)  NOT NULL,
+  artist varchar(255) NOT NULL,
+  artworkLink varchar(255) NOT NULL,
+  purchaseLink varchar(255) NOT NULL,
+  description varchar(255) NOT NULL,
+  review varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+-------------------------------------- */
     // Connect to the remote database
     function remote_connect() {
-
         $port = '3306';
-        $dbname = 'qydwprmy_subscribers';
+        $dbname = 'qydwprmy_albums';
         $db_connect = "mysql:host=localhost:$port;dbname=$dbname";
         $username = 'qydwprmy_nickalm';
         $password = 'password';
         return db_connect($db_connect, $username, $password);
-
     }
-
-
     // Local Host Database settings
     function local_connect() {
-
         $host = 'localhost';
-        $dbname = 'subscribers';
+        $dbname = 'albums';
         $username = 'root';
         $password = '';
         $db_connect = "mysql:host=$host;dbname=$dbname";
         return db_connect($db_connect, $username, $password);
-
     }
-
-
     // Open the database or die
     function db_connect($db_connect, $username, $password) {
         
-        // Enable these echo statements to debug the connection.
-        //  echo "<h2>DB Connection</h2><p>Connect String:  $db_connect, $username, $password</p>";
+//        echo "<h2>DB Connection</h2><p>Connect String:  $db_connect, $username, $password</p>";
         try {
             $db = new PDO($db_connect, $username, $password);
-            // echo '<p><b>Successful Connection</b></p>';
+//             echo '<p><b>Successful Connection</b></p>';
             return $db;
         } catch (PDOException $e) {
             $error_message = $e->getMessage();
             echo "<p>Error: $error_message</p>";
             die();
         }
-
     }
-
-
     // Open the database or die
-    function connect_database() {
+    function albums_connect() {
         
         $local = ($_SERVER['SERVER_NAME'] == 'localhost');
         if ($local) {
@@ -68,9 +57,4 @@
         }
         
     }
-
-    // Create a connection
-
-    $db = connect_database();
-
 ?>

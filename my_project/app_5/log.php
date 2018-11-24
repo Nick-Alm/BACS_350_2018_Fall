@@ -155,6 +155,9 @@
             if ($action == 'clear') {
                 $this->clear();
             }
+            if ($action =='showlog'){
+                return 'pagelog.php';
+            }
         }
         
         

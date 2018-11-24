@@ -98,7 +98,7 @@
                 <ul>
             ';
         foreach ($list as $s) {
-            echo '<li>' . $s['date'] . ', ' . $s['text'] . '</li>';
+            echo '<li>' . $s['id'] . ', ' . $s['date'] . ', ' . $s['text'] . '</li>';
         }
         echo '
                 </ul>
@@ -122,13 +122,13 @@
             
     ---------------------------------------------- */
     
-    require_once 'album_db.php';
+    require_once 'db.php';
     // My log list
     class Log {
         // Database connection
         private $db;
         function __construct() {
-            $this->db =  albums_connect();
+            $this->db =  connect_database();
         }
         
         // CRUD
