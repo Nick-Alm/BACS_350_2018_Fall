@@ -7,6 +7,7 @@
     
     Usage:
         require_once 'db.php';
+        $db = connect_database();
         
 */
 
@@ -15,10 +16,10 @@
     function remote_connect() {
 
         $port = '3306';
-        $dbname = 'uncobacs_350';
+        $dbname = 'qydwprmy_bacs350';
         $db_connect = "mysql:host=localhost:$port;dbname=$dbname";
-        $username = 'uncobacs_350';
-        $password = 'BACS_350';
+        $username = 'qydwprmy_nickalm';
+        $password = 'password';
         return db_connect($db_connect, $username, $password);
 
     }
